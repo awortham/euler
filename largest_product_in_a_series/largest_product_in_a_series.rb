@@ -7,10 +7,6 @@ class LargestProductInSeries
     series.to_s.split("").map(&:to_i)
   end
 
-  def product(collection)
-    collection.reduce(:*)
-  end
-
   def largest_product(offset)
     usable_series.reduce([]) do |index, num|
       index << usable_series.slice(index.count, offset).reduce(:*)

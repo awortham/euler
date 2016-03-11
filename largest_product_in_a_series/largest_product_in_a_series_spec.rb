@@ -17,10 +17,6 @@ RSpec.describe LargestProductInSeries do
     expect(LargestProductInSeries.new.usable_series.first).to be_a Integer
   end
 
-  it "gets product of" do
-    expect(LargestProductInSeries.new.product([7,3,1,6])).to eq 126
-  end
-
   it "returns the highest possible product of four" do
     expect(LargestProductInSeries.new.largest_product(4)).to eq 5832
   end
