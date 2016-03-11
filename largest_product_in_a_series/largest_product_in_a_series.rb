@@ -11,13 +11,9 @@ class LargestProductInSeries
     collection.reduce(:*)
   end
 
-  def largest_product(num)
-    possible_numbers = usable_series
-    final = []
-    while possible_numbers.count > num
-      final << product(possible_numbers.first(num))
-      possible_numbers.shift
-    end
-    final.max
+  def largest_product(offset)
+    usable_series.reduce([]) do |index, num|
+      index << usable_series.slice(index.count, offset).reduce(:*)
+    end.max
   end
 end
